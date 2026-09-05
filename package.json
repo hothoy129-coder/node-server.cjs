@@ -1,0 +1,12 @@
+{
+  "name": "klar-deutsch",
+  "version": "5.0.0",
+  "private": true,
+  "description": "A focused bilingual A1–B2 German pathway for exams and everyday life",
+  "scripts": {
+    "start": "node server.cjs",
+    "check": "node --check data.js && node --check vocabulary.js && node --check lessons.js && node --check official-a1.js && node --check app.js && node --check player.js && node --check pathway.js && node --check assessment.js && node --check audio-manifest.js && node --check audio.js && node --check daily.js && node --check server.cjs && node --check tests/pathway.cjs",
+    "test": "node tests/pathway.cjs"
+  },
+  "engines": {"node": ">=18"}
+}
