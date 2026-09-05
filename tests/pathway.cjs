@@ -61,7 +61,7 @@ async function groups(page){
     const page=await context.newPage(),errors=[];
     page.setDefaultTimeout(12000);
     page.on('pageerror',error=>errors.push(error.message));
-    await page.route('https://**/*',route=>route.abort());
+    await page.route('https://**/*',route=>new URL(route.request().url()).origin===new URL(base).origin?route.continue():route.abort());
     await page.goto(base);
     await page.locator('.daily-plan').waitFor();
 
